@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { GlobalStyle } from './components/GlobalStyle';
-import { Container } from './components/Container/Container.styled';
+import { Discription } from './components/Description/Description.styled';
 import { Section } from './components/Section/Section';
 import { FeedbackOptions } from './components/FeedbackOptions/FeedbackOptions';
-import { Statistics } from './components/Statistics/Statistics';
+import { Options } from './components/Options/Options';
 import { Notification } from './components/Notification/Notification';
 
 const App = () => {
@@ -18,7 +18,6 @@ const App = () => {
     if (savedFeedback) {
       setFeedback(savedFeedback);
     } else {
-      // Initialize feedback state if no data in localStorage
       setFeedback({ good: 0, neutral: 0, bad: 0 });
     }
   }, []);
@@ -52,7 +51,7 @@ const App = () => {
   const positivePercentage = countPositiveFeedbackPercentage();
 
   return (
-    <Container>
+    <Discription>
       <Section title="Sip Happens Café">
         <>
           <p>Please leave your feedback about our service by selecting one of the options below.</p>
@@ -65,9 +64,9 @@ const App = () => {
         </>
       </Section>
 
-      <Section title="Statistics">
+      <Section title="Options">
         {total ? (
-          <Statistics
+          <Options
             good={good}
             neutral={neutral}
             bad={bad}
@@ -79,7 +78,7 @@ const App = () => {
         )}
       </Section>
       <GlobalStyle />
-    </Container>
+    </Discription>
   );
 };
 

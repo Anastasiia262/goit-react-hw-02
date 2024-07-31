@@ -1,7 +1,7 @@
-import { List, Item, PercentageItem } from './Statistics.styled';
+import { List, Item, PercentageItem } from './Options.styled';
 import PropTypes from 'prop-types';
 
-export const Statistics = ({
+export const Options = ({
   good,
   neutral,
   bad,
@@ -21,7 +21,7 @@ export const Statistics = ({
   );
 };
 
-Statistics.propTypes = {
+Options.propTypes = {
   good: PropTypes.number.isRequired,
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
